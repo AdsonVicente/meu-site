@@ -1,0 +1,119 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #000000, #1a1a1a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #00aaff;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
+    }
+    50% {
+      box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+    }
+  }
+  
+  .profile-name {
+    margin: 0;
+    font-size: 24px;
+    color: #00aaff;
+    text-transform: uppercase;
+  }
+  
+  .profile-description {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 20px;
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+    position: relative;
+    background: linear-gradient(45deg, #000, #111);
+    overflow: hidden;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .link::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent, #00aaff 50%, transparent);
+    animation: lightning 1.5s infinite;
+    z-index: 0;
+    transform-origin: center;
+  }
+  
+  /* @keyframes lightning {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
+  
+  .link:hover {
+    color: #000;
+    background: linear-gradient(45deg, #00aaff, #0056b3);
+    box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
+  }
+  
+  .link:hover::before {
+    background: radial-gradient(circle, #00aaff, transparent 60%);
+  }
+  
